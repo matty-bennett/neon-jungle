@@ -18,5 +18,7 @@
 
 ### Contributions
 [Matt Bennett](https://github.com/matty-bennett)
+<br>
 [Savannah Bennett](https://github.com/savbennett8)
+<br>
 [Adrian Verdusco](https://github.com/adriancv-coder)
