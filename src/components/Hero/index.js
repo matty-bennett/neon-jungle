@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Featured() {
+function Hero() {
     return (
         <div>
             
@@ -8,4 +8,4 @@ function Featured() {
     )
 };
 
-export default Featured
+export default Hero
