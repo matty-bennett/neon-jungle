@@ -1,16 +1,18 @@
-// const db = require('./connection');
-// const { Category } = require('../models');
+const db = require('./connection');
+const { Category } = require('../models');
 
-// db.once('open', aysnc () => {
-//     await Category.deleteMany();
+db.once('open', async () => {
+    await Category.deleteMany();
 
-//     const categories = await Category.insertMany([
-//         { name: 'Snakes' },
-//         { name: 'Frogs' },
-//         { name: 'Geckos' },
-//         { name: 'Lizards' },
-//         { name: 'Plants' }
-//     ]);
+    const categories = await Category.insertMany([
+        { name: 'Snakes' },
+        { name: 'Geckos' },
+        { name: 'Lizards' },
+        { name: 'Frogs' },
+        { name: 'Plants' }
+    ]);
 
-//     console.log('Categories seeded');
-// });
+    console.log('Categories seeded');
+
+    process.exit();
+});
