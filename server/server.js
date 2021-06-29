@@ -30,9 +30,9 @@ app.use(express.json());
 //     res.sendFile(path.join(__dirname, '../client/build/index.html'));
 // });
 
-// app.once('open', () => {
-app.listen(PORT, () => {
-    console.log(`API server running on port ${PORT}!`);
-    console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}!`);
+db.once('open', () => {
+    app.listen(PORT, () => {
+        console.log(`API server running on port ${PORT}!`);
+        console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}!`);
+    });
 });
-// });
