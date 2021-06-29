@@ -11,3 +11,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.header {
+  background-color: rgb(36, 35, 35);
+  color: rgb(253, 244, 244);
+  padding: 20px 0 20px 0;
+}
+
+.nav {
+  color: white;
+}
