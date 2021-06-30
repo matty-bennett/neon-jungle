@@ -1,9 +1,18 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Product, Category, Order } = require('../models');
+const { Category, Product, User, Order } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
   Query: {
+    // me query is to test authMiddleware
+    me: async (parent, args, context) => {
+      if (context.user) {
+        const userData = await User.findOne({ _id: context.user._id });
+
+        return userData;
+      }
+      throw new AuthenticationError('You are not logged in.');
+    },
     categories: async () => {
       return await Category.find();
     },
@@ -25,32 +34,37 @@ const resolvers = {
     product: async (parent, { _id }) => {
       return await Product.findById(_id).populate('category');
     },
+    users: async () => {
+      return User.find()
+        .select('-__v -password')
+    },
     user: async (parent, args, context) => {
       if (context.user) {
-        const user = await User.findById(context.user._id).populate({
-          path: 'orders.products',
-          populate: 'category'
-        });
+        const user = await User.findOne({ _id: context.user._id })
+          .populate({
+            path: 'orders.products',
+            populate: 'category'
+          });
 
         user.orders.sort((a, b) => b.purchaseDate - a.purchaseDate);
 
         return user;
       }
-
-      throw new AuthenticationError('Not logged in');
+      throw new AuthenticationError('You are not logged in!');
     },
     order: async (parent, { _id }, context) => {
       if (context.user) {
-        const user = await User.findById(context.user._id).populate({
-          path: 'orders.products',
-          populate: 'category'
-        });
+        const user = await User.findById(context.user._id)
+          .populate({
+            path: 'orders.products',
+            populate: 'category'
+          });
 
-        return user.orders.id(_id);
+        return user.order.id(_id);
       }
 
-      throw new AuthenticationError('Not logged in');
-    }
+      throw new AuthenticationError('You are not logged in!');
+    },
   },
   Mutation: {
     addUser: async (parent, args) => {
@@ -58,25 +72,6 @@ const resolvers = {
       const token = signToken(user);
 
       return { token, user };
-    },
-    addOrder: async (parent, { products }, context) => {
-      console.log(context);
-      if (context.user) {
-        const order = new Order({ products });
-
-        await User.findByIdAndUpdate(context.user._id, { $push: { orders: order } });
-
-        return order;
-      }
-
-      throw new AuthenticationError('Not logged in');
-    },
-    updateUser: async (parent, args, context) => {
-      if (context.user) {
-        return await User.findByIdAndUpdate(context.user._id, args, { new: true });
-      }
-
-      throw new AuthenticationError('Not logged in');
     },
     updateProduct: async (parent, { _id, quantity }) => {
       const decrement = Math.abs(quantity) * -1;
@@ -87,20 +82,19 @@ const resolvers = {
       const user = await User.findOne({ email });
 
       if (!user) {
-        throw new AuthenticationError('Incorrect credentials');
+        throw new AuthenticationError('Incorrect login credentials.');
       }
 
       const correctPw = await user.isCorrectPassword(password);
 
       if (!correctPw) {
-        throw new AuthenticationError('Incorrect credentials');
+        throw new AuthenticationError('Incorrect login credentials.');
       }
 
       const token = signToken(user);
-
       return { token, user };
     }
   }
-};
+}
 
 module.exports = resolvers;
