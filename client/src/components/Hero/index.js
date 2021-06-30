@@ -17,7 +17,9 @@ function Hero() {
                 src={Gecko}
                 alt="Giant Day Gecko"
                 />
-                <Carousel.Caption>
+                <Carousel.Caption style={{
+                    marginBottom: "2rem"
+                }}>
                 <Button className="button-primary" href="#" size="lg" block>View All Geckos</Button>
                 </Carousel.Caption>
             </Carousel.Item>
@@ -28,7 +30,9 @@ function Hero() {
                 alt="Rainbow Boa"
                 />
 
-                <Carousel.Caption>
+                <Carousel.Caption style={{
+                    marginBottom: "2rem"
+                }}>
                 <Button className="button-primary" href="#" size="lg" block>View All Snakes</Button>
                 </Carousel.Caption>
             </Carousel.Item>
@@ -39,7 +43,9 @@ function Hero() {
                 alt="Orange Terribilis"
                 />
 
-                <Carousel.Caption>
+                <Carousel.Caption style={{
+                    marginBottom: "2rem"
+                }}>
                 <Button className="button-primary" href="#" size="lg" block>View All Frogs</Button>
                 </Carousel.Caption>
             </Carousel.Item>
@@ -50,7 +56,9 @@ function Hero() {
                 alt="Bearded Dragon"
                 />
 
-                <Carousel.Caption>
+                <Carousel.Caption style={{
+                    marginBottom: "2rem"
+                }}>
                 <Button className="button-primary" href="#" size="lg" block>View All Lizards</Button>
                 </Carousel.Caption>
             </Carousel.Item>
@@ -61,7 +69,9 @@ function Hero() {
                 alt="Bromeliad"
                 />
 
-                <Carousel.Caption>
+                <Carousel.Caption style={{
+                    marginBottom: "2rem"
+                }}>
                 <Button className="button-primary" href="#" size="lg" block>View All Plants</Button>
                 </Carousel.Caption>
             </Carousel.Item>
