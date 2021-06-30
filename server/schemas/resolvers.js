@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { Category, User } = require('../models');
+const { Category, Product, User } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -16,8 +16,24 @@ const resolvers = {
         categories: async () => {
             return await Category.find();
         },
-        //products: {},
-        //product: {},
+        products: async (parent, { category, name }) => {
+            const params = {};
+
+            if (category) {
+                params.category = category;
+            }
+
+            if (name) {
+                params.name = {
+                    $regex: name
+                };
+            }
+
+            return await Product.find(params).populate('category');
+        },
+        product: async (parent, { _id }) => {
+            return await Product.findById(_id).populate('category');
+        },
         users: async () => {
             return User.find()
                 .select('-__v -password')
