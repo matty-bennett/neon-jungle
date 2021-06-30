@@ -15,7 +15,7 @@ function Navi() {
     return(
         <div className="navi">
             <Container>
-                <Row className="justify-content-center">
+                <Row className="d-flex justify-content-center">
                     <Navbar>
                         <Nav className="mr-auto">
                             <Nav.Link href="#home">Home</Nav.Link>
@@ -28,6 +28,7 @@ function Navi() {
                             </NavDropdown>
                             <Nav.Link href="#supplies">Supplies</Nav.Link>
                             <Nav.Link href="#feeders">Feeders</Nav.Link>
+                            <Nav.Link href="#community">Community</Nav.Link>
                             <Nav.Link href="#contact">Contact</Nav.Link>
                             
                             <Form inline>
