@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { Category, Product, User } = require('../models');
+const { Category, Product, User, Order } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -41,18 +41,30 @@ const resolvers = {
         user: async (parent, args, context) => {
             if (context.user) {
                 const user = await User.findOne({ _id: context.user._id })
-                // .populate({
-                //     path: 'orders.products',
-                //     populate: 'category'
-                // });
+                    .populate({
+                        path: 'orders.products',
+                        populate: 'category'
+                    });
 
-                // user.orders.sort((a, b) => b.purchaseDate - a.purchaseDate);
+                user.orders.sort((a, b) => b.purchaseDate - a.purchaseDate);
 
                 return user;
             }
             throw new AuthenticationError('You are not logged in!');
         },
-        //order: {}
+        order: async (parent, { _id }, context) => {
+            if (context.user) {
+                const user = await User.findById(context.user._id)
+                    .populate({
+                        path: 'orders.products',
+                        populate: 'category'
+                    });
+
+                return user.order.id(_id);
+            }
+
+            throw new AuthenticationError('You are not logged in!');
+        },
     },
     Mutation: {
         addUser: async (parent, args) => {
