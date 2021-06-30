@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const { Schema } = mongoose;
+const { Schema, model } = mongoose;
 
 const categorySchema = new Schema({
     name: {
@@ -9,3 +9,7 @@ const categorySchema = new Schema({
         trim: true
     }
 });
+
+const Category = model('Category', categorySchema);
+
+module.exports = Category;
