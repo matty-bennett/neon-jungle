@@ -4,20 +4,33 @@ const { signToken } = require('../utils/auth');
 
 const resolvers = {
     Query: {
+        // me query is to test authMiddleware
+        me: async (parent, args, context) => {
+            if (context.user) {
+                const userData = await User.findOne({ _id: context.user._id });
+
+                return userData;
+            }
+            throw new AuthenticationError('You are not logged in.');
+        },
         categories: async () => {
             return await Category.find();
         },
         //products: {},
         //product: {},
+        users: async () => {
+            return User.find()
+                .select('-__v -password')
+        },
         user: async (parent, args, context) => {
             if (context.user) {
-                const user = await User.findById(context.user._id)
+                const user = await User.findOne({ _id: context.user._id })
                 // .populate({
                 //     path: 'orders.products',
                 //     populate: 'category'
                 // });
 
-                user.orders.sort((a, b) => b.purchaseDate - a.purchaseDate);
+                // user.orders.sort((a, b) => b.purchaseDate - a.purchaseDate);
 
                 return user;
             }
