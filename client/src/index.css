@@ -1,3 +1,4 @@
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -40,12 +41,17 @@ code {
 }
 
 .button-primary {
+  background-color: #2b2b2b !important;
+  border-color: rgb(26, 255, 26) !important;
+}
+
+.button-primary:hover {
   background-color: rgb(0, 190, 0) !important;
   border-color: green !important;
 }
 
-.button-primary:hover {
-  background-color: #2b2b2b !important;
+.button-primary::after {
+  border-color: rgb(26, 255, 26);
 }
 
 .footer {
@@ -72,12 +78,12 @@ code {
 }
 
 .header-link {
-  color: #2b2b2b;
+  color: white;
 }
 
 .header-link:hover {
   text-decoration: none;
-  color: rgb(26, 255, 26);
+  color:white;
 }
 
 .login {
@@ -102,3 +108,4 @@ code {
   text-decoration: none;
   color: rgb(26, 255, 26);
 }
+

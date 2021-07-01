@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 //import Hero from './components/Hero';
 import Header from './components/Header';
 import Navi from './components/Nav';
+import Footer from './components/Footer';
 import { ApolloProvider } from '@apollo/react-hooks';
 import ApolloClient from 'apollo-boost';
 
@@ -42,6 +43,7 @@ function App() {
               <Route exact path="/signup" component={Signup}/>
               <Route component={NoMatch} />
             </Switch>
+            <Footer />
           </StoreProvider>
         </div>
       </Router>

@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
 import CartItem from '../CartItem';
 import Auth from '../../utils/auth';
-// import './style.css';
+import './style.css';
 import { useStoreContext } from "../../utils/GlobalState";
 import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from "../../utils/actions";
 import { idbPromise } from "../../utils/helpers";
+import { FaShoppingCart } from 'react-icons/fa';
 
 const Cart = () => {
     const [state, dispatch] = useStoreContext();
@@ -37,7 +38,7 @@ const Cart = () => {
             <div className="cart-closed" onClick={toggleCart}>
                 <span
                     role="img"
-                    aria-label="trash">🛒</span>
+                    aria-label="trash"><FaShoppingCart /></span>
             </div>
         );
     }
@@ -67,7 +68,7 @@ const Cart = () => {
                     </div>
                 </div>
             ) : (
-                <h3>Nothing in your cart yet!</h3>
+                <h3>No Items In Cart!</h3>
             )}
         </div>
     );
