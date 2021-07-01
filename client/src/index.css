@@ -45,7 +45,7 @@ code {
 }
 
 .button-primary:hover {
-  background-color: green !important;
+  background-color: #2b2b2b !important;
 }
 
 .footer {
@@ -69,4 +69,36 @@ code {
 .navlink:hover {
   text-decoration: none;
   color: rgb(255, 136, 0);
+}
+
+.header-link {
+  color: #2b2b2b;
+}
+
+.header-link:hover {
+  text-decoration: none;
+  color: rgb(26, 255, 26);
+}
+
+.login {
+  background-color: #2b2b2b;
+  padding: 2rem;
+  border-style: solid;
+  border-right: 1px;
+  border-bottom: 1px;
+  border-left: 1px;
+  border-color: rgb(26, 255, 26);
+}
+
+.login-layout {
+  margin: 2rem;
+}
+
+.login-link {
+  color: #2b2b2b;
+}
+
+.login-link:hover {
+  text-decoration: none;
+  color: rgb(26, 255, 26);
 }

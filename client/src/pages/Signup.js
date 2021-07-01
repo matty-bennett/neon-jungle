@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useMutation } from '@apollo/react-hooks';
 import Auth from "../utils/auth";
 import { ADD_USER } from "../utils/mutations";
+import { Button } from "react-bootstrap";
 
 function Signup(props) {
     const [formState, setFormState] = useState({ email: '', password: '' });
@@ -29,15 +30,21 @@ function Signup(props) {
     };
 
     return (
-        <div className="container my-1">
-            <Link to="/login">
+        <div>
+
+            <Link className="d-flex justify-content-center login-layout login-link" to="/login">
                 ← Go to Login
             </Link>
 
-            <h2>Signup</h2>
+            <h2 className="d-flex justify-content-center" style={{color: "rgb(255, 136, 0)"}}>Signup</h2>
+
             <form onSubmit={handleFormSubmit}>
-                <div className="flex-row space-between my-2">
-                    <label htmlFor="firstName">First Name:</label>
+
+                <div className="d-flex justify-content-center login-layout">
+                    <label style={{
+                        color: "rgb(255, 136, 0)",
+                        marginRight: "1rem"
+                        }} htmlFor="firstName">First Name:</label>
                     <input
                         placeholder="First"
                         name="firstName"
@@ -46,8 +53,12 @@ function Signup(props) {
                         onChange={handleChange}
                     />
                 </div>
-                <div className="flex-row space-between my-2">
-                    <label htmlFor="lastName">Last Name:</label>
+
+                <div className="d-flex justify-content-center login-layout">
+                    <label style={{
+                        color: "rgb(255, 136, 0)",
+                        marginRight: "1rem"
+                        }} htmlFor="lastName">Last Name:</label>
                     <input
                         placeholder="Last"
                         name="lastName"
@@ -56,8 +67,12 @@ function Signup(props) {
                         onChange={handleChange}
                     />
                 </div>
-                <div className="flex-row space-between my-2">
-                    <label htmlFor="email">Email:</label>
+
+                <div className="d-flex justify-content-center login-layout">
+                    <label style={{
+                        color: "rgb(255, 136, 0)",
+                        marginRight: "1rem"
+                        }} htmlFor="email">Email:</label>
                     <input
                         placeholder="youremail@test.com"
                         name="email"
@@ -66,8 +81,12 @@ function Signup(props) {
                         onChange={handleChange}
                     />
                 </div>
-                <div className="flex-row space-between my-2">
-                    <label htmlFor="pwd">Password:</label>
+
+                <div className="d-flex justify-content-center login-layout">
+                    <label style={{
+                        color: "rgb(255, 136, 0)",
+                        marginRight: "1rem"
+                        }} htmlFor="pwd">Password:</label>
                     <input
                         placeholder="******"
                         name="password"
@@ -76,11 +95,13 @@ function Signup(props) {
                         onChange={handleChange}
                     />
                 </div>
-                <div className="flex-row flex-end">
-                    <button type="submit">
+
+                <div className="d-flex justify-content-center login-layout">
+                    <Button className="button-primary" type="submit">
                         Submit
-                    </button>
+                    </Button>
                 </div>
+
             </form>
         </div>
     );
