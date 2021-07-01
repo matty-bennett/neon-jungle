@@ -1,24 +1,52 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useQuery } from '@apollo/react-hooks';
 
 import Product from '../Product';
 import { QUERY_PRODUCTS, QUERY_CATEGORIES } from '../../utils/queries';
 import spinner from "../../assets/spinner.gif";
+import { useStoreContext } from '../../utils/GlobalState';
+import { UPDATE_CURRENT_CATEGORY, UPDATE_PRODUCTS } from '../../utils/actions';
+import { idbPromise } from '../../utils/helpers';
 
-
-function Category({ currentCategory }) {
+function Category() {
+    const [state, dispatch] = useStoreContext();
+    const { currentCategory } = state;
     const { loading, data } = useQuery(QUERY_PRODUCTS);
-    const products = data?.products || [];
 
-    // const { data } = useQuery(QUERY_CATEGORIES);
-    // const category = data?.category;
+    useEffect(() => {
+        if (data) {
+            //store in the global state object
+            dispatch({
+                type: UPDATE_PRODUCTS,
+                products: data.products
+            });
+
+            dispatch({
+                type: UPDATE_CURRENT_CATEGORY,
+                category: data.category
+            });
+
+            //also save each product to IndexedDB
+            data.products.forEach((product) => {
+                idbPromise('products', 'put', product);
+            });
+        } else if (!loading) {
+            //retrieve data from 'products' store since we're offline
+            idbPromise('products', 'get').then((products) => {
+                dispatch({
+                    type: UPDATE_PRODUCTS,
+                    products: products
+                });
+            });
+        }
+    }, [data, loading, dispatch]);
 
     function filterProducts() {
         if (!currentCategory) {
-            return products;
+            return state.products;
         }
 
-        return products.filter(product => product.category._id === currentCategory);
+        return state.products.filter(product => product.category._id === currentCategory);
     }
 
     return (
@@ -28,7 +56,7 @@ function Category({ currentCategory }) {
                 <div>Filter</div>
                 <div>Sort</div>
             </div>
-            {products.length ? (
+            {state.products.length ? (
                 <div>
                     {filterProducts().map(product => (
                         <Product
