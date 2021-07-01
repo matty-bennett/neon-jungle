@@ -31,7 +31,7 @@ code {
 }
 
 .hero-img {
-  max-width: 100%;
+  width: 100%;
   max-height: 50rem;
 }
 
@@ -58,6 +58,6 @@ code {
   border-color: rgb(26, 255, 26);
 }
 
-.footer h4 {
+.footer h4, h6 {
   color: rgb(255, 136, 0);
 }
