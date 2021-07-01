@@ -1,20 +1,51 @@
 
 import React from 'react';
-import Hero from './components/Hero';
-// import './App.css';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+//import Hero from './components/Hero';
 import Header from './components/Header';
 import Navi from './components/Nav';
-import Footer from './components/Footer';
+import { ApolloProvider } from '@apollo/react-hooks';
+import ApolloClient from 'apollo-boost';
+
+import Home from './pages/Home';
+import Detail from "./pages/Detail";
+import NoMatch from "./pages/NoMatch";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import { StoreProvider } from "./utils/GlobalState";
+
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+const client = new ApolloClient({
+  request: (operation) => {
+    const token = localStorage.getItem('id_token')
+    operation.setContext({
+      headers: {
+        authorization: token ? `Bearer ${token}` : ''
+      }
+    })
+  },
+  uri: '/graphql',
+})
 
 function App() {
   return (
-    <div>
-      <Header/>
-      <Navi/>
-      <Hero/>
-      <Footer/>
-    </div>
+    <ApolloProvider client={client}>
+      <Router>
+        <div>
+          <StoreProvider>
+            <Header />
+            <Navi />
+            <Switch>
+              <Route exact path="/" component={Home}/>
+              <Route exact path="/login" component={Login}/>
+              <Route exact path="/signup" component={Signup}/>
+              <Route component={NoMatch} />
+            </Switch>
+          </StoreProvider>
+        </div>
+      </Router>
+    </ApolloProvider>
 
   );
 }

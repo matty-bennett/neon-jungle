@@ -61,3 +61,12 @@ code {
 .footer h4, h6 {
   color: rgb(255, 136, 0);
 }
+
+.navlink {
+  color: #2b2b2b;
+}
+
+.navlink:hover {
+  text-decoration: none;
+  color: rgb(255, 136, 0);
+}

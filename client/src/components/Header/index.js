@@ -5,6 +5,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
 import Logo from '../../assets/logo/neon-jungle-logo.jpg';
+import { Link } from 'react-router-dom';
 
 function Header() {
      return (
@@ -12,7 +13,7 @@ function Header() {
             <Container>
                 <Row className="d-flex justify-content-between">
                     <Col className="d-flex align-items-center justify-content-center">
-                        login
+                        <Link to='/login'>login</Link>
                     </Col>
                     <Col xs={6} md={4} className="d-flex justify-content-center">
                         <Image className="logo-img" src={Logo} alt="logo" />

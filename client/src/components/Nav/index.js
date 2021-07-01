@@ -8,6 +8,7 @@ import Form from 'react-bootstrap/Form';
 import FormControl from 'react-bootstrap/FormControl';
 import Button from 'react-bootstrap/Button';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { Link } from 'react-router-dom';
 
 function Navi() {
 
@@ -18,18 +19,18 @@ function Navi() {
                 <Row className="d-flex justify-content-center">
                     <Navbar>
                         <Nav className="mr-auto">
-                            <Nav.Link href="#home">Home</Nav.Link>
+                            <Nav.Link><Link className="navlink" to='/'>Home</Link></Nav.Link>
                             <NavDropdown title="Availability" id="navbarScrollingDropdown">
-                                <NavDropdown.Item href="#frogs">Frogs</NavDropdown.Item>
-                                <NavDropdown.Item href="#geckos">Geckos</NavDropdown.Item>
-                                <NavDropdown.Item href="#snakes">Snakes</NavDropdown.Item>
-                                <NavDropdown.Item href="#lizards">Lizards</NavDropdown.Item>
-                                <NavDropdown.Item href="#plants">Plants</NavDropdown.Item>
+                                <NavDropdown.Item><Link className="navlink" to="/frogs">Frogs</Link></NavDropdown.Item>
+                                <NavDropdown.Item><Link className="navlink" to="/geckos">Geckos</Link></NavDropdown.Item>
+                                <NavDropdown.Item><Link className="navlink" to="/snakes">Snakes</Link></NavDropdown.Item>
+                                <NavDropdown.Item><Link className="navlink" to="/lizards">Lizards</Link></NavDropdown.Item>
+                                <NavDropdown.Item><Link className="navlink" to="/plants">Plants</Link></NavDropdown.Item>
                             </NavDropdown>
-                            <Nav.Link href="#supplies">Supplies</Nav.Link>
-                            <Nav.Link href="#feeders">Feeders</Nav.Link>
-                            <Nav.Link href="#community">Community</Nav.Link>
-                            <Nav.Link href="#contact">Contact</Nav.Link>
+                            <Nav.Link><Link className="navlink" to="/supplies">Supplies</Link></Nav.Link>
+                            <Nav.Link><Link className="navlink" to="/feeders">Feeders</Link></Nav.Link>
+                            <Nav.Link><Link className="navlink" to="/community">Community</Link></Nav.Link>
+                            <Nav.Link><Link className="navlink" to="/contact">Contact</Link></Nav.Link>
                             
                             <Form inline>
                                 <FormControl type="text" placeholder="Search" className="mr-sm-2" />
