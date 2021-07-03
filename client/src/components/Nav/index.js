@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import '../../index.css'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -7,48 +7,10 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from 'react-router-dom';
 
-import { useQuery } from '@apollo/react-hooks';
-import { idbPromise } from '../../utils/helpers';
-import { UPDATE_CATEGORIES, UPDATE_CURRENT_CATEGORY } from '../../utils/actions';
-import { QUERY_CATEGORIES } from "../../utils/queries";
-import { useStoreContext } from "../../utils/GlobalState";
-import Category from '../Category';
+import AvailabilityMenu from '../TestComponent';
 
-function Navi(category) {
-    const {
-        _id,
-        name
-    } = category;
-    const [state, dispatch] = useStoreContext();
-    const { categories } = state;
-    const { loading, data: categoryData } = useQuery(QUERY_CATEGORIES);
 
-    useEffect(() => {
-        if (categoryData) {
-            dispatch({
-                type: UPDATE_CATEGORIES,
-                categories: categoryData.categories
-            });
-            categoryData.categories.forEach(category => {
-                idbPromise('categories', 'put', category);
-            });
-        } else if (!loading) {
-            idbPromise('categories', 'get').then(categories => {
-                dispatch({
-                    type: UPDATE_CATEGORIES,
-                    categories: categories
-                });
-            });
-        }
-    }, [categoryData, loading, dispatch]);
-
-    const handleClick = id => {
-        dispatch({
-            type: UPDATE_CURRENT_CATEGORY,
-            currentCategory: id
-        });
-    };
-
+function Navi() {
     return (
         <div className="navi">
             <Container>
@@ -57,10 +19,11 @@ function Navi(category) {
                         <Nav className="mr-auto">
                             <Nav.Link><Link className="navlink" to='/'>Home</Link></Nav.Link>
                             <NavDropdown title="Availability" id="navbarScrollingDropdown">
-                                <NavDropdown.Item onClick={(selectedCategory) => { handleClick(selectedCategory._id); }}>
-                                    <Link className="navlink" to={`/category/${category.name}`}>Snakes</Link>
-                                </NavDropdown.Item>
-                                <NavDropdown.Item onClick={(selectedCategory) => { handleClick(selectedCategory._id); }}>
+                                <AvailabilityMenu />
+                                {/* <NavDropdown.Item onClick={(selectedCategory) => { handleClick(selectedCategory._id); }}>
+                                    <Link className="navlink" to={`/category/${name}`}>Snakes</Link>
+                                </NavDropdown.Item> */}
+                                {/* <NavDropdown.Item onClick={(selectedCategory) => { handleClick(selectedCategory._id); }}>
                                     <Link className="navlink" to="/category">Frogs</Link>
                                 </NavDropdown.Item>
                                 <NavDropdown.Item onClick={(selectedCategory) => { handleClick(selectedCategory._id); }}>
@@ -71,12 +34,12 @@ function Navi(category) {
                                 </NavDropdown.Item>
                                 <NavDropdown.Item onClick={(selectedCategory) => { handleClick(selectedCategory._id); }}>
                                     <Link className="navlink" to="/category">Plants</Link>
-                                </NavDropdown.Item>
+                                </NavDropdown.Item> */}
                             </NavDropdown>
                             <Nav.Link><Link className="navlink" to="/supplies">Supplies</Link></Nav.Link>
                             <Nav.Link><Link className="navlink" to="/feeders">Feeders</Link></Nav.Link>
                             <Nav.Link><Link className="navlink" to="/community">Community</Link></Nav.Link>
-                            <Nav.Link><Link className="navlink" to="/contact">Contact</Link></Nav.Lin                 
+                            <Nav.Link><Link className="navlink" to="/contact">Contact</Link></Nav.Link>
 
                         </Nav>
                     </Navbar>
