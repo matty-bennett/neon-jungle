@@ -21,11 +21,6 @@ function Category() {
                 products: data.products
             });
 
-            dispatch({
-                type: UPDATE_CURRENT_CATEGORY,
-                category: data.category
-            });
-
             //also save each product to IndexedDB
             data.products.forEach((product) => {
                 idbPromise('products', 'put', product);
