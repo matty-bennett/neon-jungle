@@ -7,6 +7,7 @@ import Lizard from '../../assets/hero/bearded-dragon.jpg';
 import Snake from '../../assets/hero/rainbow-boa.jpg';
 import Frog from '../../assets/hero/terribilis.jpg';
 import Plant from '../../assets/hero/bromeliad.jpg';
+import ViewAll from '../../assets/hero/view-all.jpg';
 
 function Hero() {
     return(
@@ -73,6 +74,19 @@ function Hero() {
                     marginBottom: "2rem"
                 }}>
                 <Button className="button-primary" href="#" size="lg" block>View All Plants</Button>
+                </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+                <img
+                className="hero-img"
+                src={ViewAll}
+                alt="jungle"
+                />
+
+                <Carousel.Caption style={{
+                    marginBottom: "2rem"
+                }}>
+                <Button className="button-primary" href="#" size="lg" block>View All Categories</Button>
                 </Carousel.Caption>
             </Carousel.Item>
         </Carousel>

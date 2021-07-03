@@ -17,13 +17,7 @@ function Navi() {
                     <Navbar>
                         <Nav className="mr-auto">
                             <Nav.Link><Link className="navlink" to='/'>Home</Link></Nav.Link>
-                            <NavDropdown title="Availability" id="navbarScrollingDropdown">
-                                <NavDropdown.Item><Link className="navlink" to="/frogs">Frogs</Link></NavDropdown.Item>
-                                <NavDropdown.Item><Link className="navlink" to="/geckos">Geckos</Link></NavDropdown.Item>
-                                <NavDropdown.Item><Link className="navlink" to="/snakes">Snakes</Link></NavDropdown.Item>
-                                <NavDropdown.Item><Link className="navlink" to="/lizards">Lizards</Link></NavDropdown.Item>
-                                <NavDropdown.Item><Link className="navlink" to="/plants">Plants</Link></NavDropdown.Item>
-                            </NavDropdown>
+                            <Nav.Link><Link className="navlink" to='/categories'>Categories</ Link></Nav.Link>
                             <Nav.Link><Link className="navlink" to="/supplies">Supplies</Link></Nav.Link>
                             <Nav.Link><Link className="navlink" to="/feeders">Feeders</Link></Nav.Link>
                             <Nav.Link><Link className="navlink" to="/community">Community</Link></Nav.Link>

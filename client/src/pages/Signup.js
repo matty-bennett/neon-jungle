@@ -97,9 +97,9 @@ function Signup(props) {
                 </div>
 
                 <div className="d-flex justify-content-center login-layout">
-                    <Button className="button-primary" type="submit">
+                    <button className="button-primary" type="submit">
                         Submit
-                    </Button>
+                    </button>
                 </div>
 
             </form>
