@@ -23,8 +23,53 @@ db.once('open', async () => {
       name: 'Brazilian Rainbow Boa',
       description:
         'Lorem ipsum snek very pretty, you will like I promise',
-      image: 'brb-snake.jpg',
+      image: 'product.jpg',
       category: categories[0]._id,
+      price: 500,
+      quantity: 10
+    },
+    {
+      name: 'Product 2',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      image: 'product2.jpg',
+      category: categories[1]._id,
+      price: 100,
+      quantity: 50
+    },
+    {
+      name: 'Product 3',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      image: 'product3.jpg',
+      category: categories[1]._id,
+      price: 150,
+      quantity: 7
+    },
+    {
+      name: 'Product 4',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      image: 'product4.jpg',
+      category: categories[2]._id,
+      price: 500,
+      quantity: 10
+    },
+    {
+      name: 'Product 5',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      image: 'product5.jpg',
+      category: categories[3]._id,
+      price: 500,
+      quantity: 10
+    },
+    {
+      name: 'Product 6',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      image: 'product6.jpg',
+      category: categories[4]._id,
       price: 500,
       quantity: 10
     },
