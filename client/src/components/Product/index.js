@@ -48,19 +48,20 @@ function Product(item) {
     };
 
     return (
-        <div>
+        <div className="product">
             <Link to={`/products/${_id}`}>
                 <img
+                    className="sub-product"
                     alt={name}
                     src={`/images/${image}`}
                 />
                 <p>{name}</p>
             </Link>
-            <div>
+            <div className="sub-product">
                 <div>{quantity} {pluralize("item", quantity)} in stock.</div>
-                <span>${price}</span>
+                <span>Price: ${price}</span>
             </div>
-            <button onClick={addToCart}>Add to cart</button>
+            <button className="product-button" onClick={addToCart}>Add to cart</button>
         </div>
     );
 };

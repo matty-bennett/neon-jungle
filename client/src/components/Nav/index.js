@@ -18,8 +18,8 @@ function Navi() {
     }
     return (
         <div className="navi">
-            <Container>
-                <Row className="d-flex justify-content-center">
+            <div>
+                <Row className="d-flex justify-content-around">
                     <Navbar>
                         <Nav className="mr-auto">
                             <Nav.Link className="navlink" href='/'>Home</Nav.Link>
@@ -32,7 +32,7 @@ function Navi() {
                         </Nav>
                     </Navbar>
                 </Row>
-            </Container>
+            </div>
         </div>
     )
 }
