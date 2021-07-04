@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { useMutation } from '@apollo/react-hooks';
 import Auth from "../utils/auth";
 import { ADD_USER } from "../utils/mutations";
-import { Button } from "react-bootstrap";
 
 function Signup(props) {
     const [formState, setFormState] = useState({ email: '', password: '' });
@@ -36,7 +35,7 @@ function Signup(props) {
                 ← Go to Login
             </Link>
 
-            <h2 className="d-flex justify-content-center" style={{color: "rgb(255, 136, 0)"}}>Signup</h2>
+            <h2 className="d-flex justify-content-center" style={{ color: "rgb(255, 136, 0)" }}>Signup</h2>
 
             <form onSubmit={handleFormSubmit}>
 
@@ -44,7 +43,7 @@ function Signup(props) {
                     <label style={{
                         color: "rgb(255, 136, 0)",
                         marginRight: "1rem"
-                        }} htmlFor="firstName">First Name:</label>
+                    }} htmlFor="firstName">First Name:</label>
                     <input
                         placeholder="First"
                         name="firstName"
@@ -58,7 +57,7 @@ function Signup(props) {
                     <label style={{
                         color: "rgb(255, 136, 0)",
                         marginRight: "1rem"
-                        }} htmlFor="lastName">Last Name:</label>
+                    }} htmlFor="lastName">Last Name:</label>
                     <input
                         placeholder="Last"
                         name="lastName"
@@ -72,7 +71,7 @@ function Signup(props) {
                     <label style={{
                         color: "rgb(255, 136, 0)",
                         marginRight: "1rem"
-                        }} htmlFor="email">Email:</label>
+                    }} htmlFor="email">Email:</label>
                     <input
                         placeholder="youremail@test.com"
                         name="email"
@@ -86,7 +85,7 @@ function Signup(props) {
                     <label style={{
                         color: "rgb(255, 136, 0)",
                         marginRight: "1rem"
-                        }} htmlFor="pwd">Password:</label>
+                    }} htmlFor="pwd">Password:</label>
                     <input
                         placeholder="******"
                         name="password"

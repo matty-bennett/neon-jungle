@@ -1,16 +1,14 @@
 import React from 'react';
-// import Header from '../components/Header';
 import Hero from '../components/Hero';
-// import Footer from '../components/Footer';
 import Cart from '../components/Cart';
+import ProductList from '../components/ProductList';
 
 const Home = () => {
     return (
-        <div>
-            {/* <Header /> */}
+        <div className="container">
             <Cart />
             <Hero />
-            {/* <Footer /> */}
+            <ProductList />
         </div>
     );
 };

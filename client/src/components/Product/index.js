@@ -5,7 +5,7 @@ import { pluralize } from "../../utils/helpers";
 import { useStoreContext } from "../../utils/GlobalState";
 import { ADD_TO_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
 import { idbPromise } from "../../utils/helpers";
-import Snake from '../../assets/hero/rainbow-boa.jpg';
+// import ProductImages from '../../assets/products';
 
 function Product(item) {
     const {
@@ -52,7 +52,7 @@ function Product(item) {
             <Link to={`/products/${_id}`}>
                 <img
                     alt={name}
-                    src={Snake}
+                    src={`/images/${image}`}
                 />
                 <p>{name}</p>
             </Link>

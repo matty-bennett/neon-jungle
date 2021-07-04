@@ -1,10 +1,8 @@
-
 import React from 'react';
-import { Col, Row, Container, ListGroup, Button } from 'react-bootstrap';
+import { Col, Row, Container, ListGroup } from 'react-bootstrap';
 import { FaFacebook } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaYoutube } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
 
 function Footer() {
     return (
@@ -36,4 +34,4 @@ function Footer() {
     )
 };
 
-export default Footer
+export default Footer;
