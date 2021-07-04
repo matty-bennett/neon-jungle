@@ -7,6 +7,8 @@ import Lizard from '../../assets/hero/bearded-dragon.jpg';
 import Snake from '../../assets/hero/rainbow-boa.jpg';
 import Frog from '../../assets/hero/terribilis.jpg';
 import Plant from '../../assets/hero/bromeliad.jpg';
+import ViewAll from '../../assets/hero/view-all.jpg';
+
 import { Link } from 'react-router-dom';
 // import { useStoreContext } from '../../utils/GlobalState';
 // import Category from '../Category';
@@ -92,6 +94,19 @@ function Hero(category) {
                     <Button className="button-primary" href="#" size="lg" block>
                         <Link to={`/category/${_id}`}>View All Plants</Link>
                     </Button>
+                </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+                <img
+                className="hero-img"
+                src={ViewAll}
+                alt="jungle"
+                />
+
+                <Carousel.Caption style={{
+                    marginBottom: "2rem"
+                }}>
+                <Button className="button-primary" href="#" size="lg" block>View All Categories</Button>
                 </Carousel.Caption>
             </Carousel.Item>
         </Carousel>
