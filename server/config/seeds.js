@@ -20,57 +20,57 @@ db.once('open', async () => {
 
   const products = await Product.insertMany([
     {
-      name: 'Brazilian Rainbow Boa',
+      name: 'Brazilian Rainbow Boa (Epicrates E. cenchria',
       description:
-        'Lorem ipsum snek very pretty, you will like I promise',
-      image: 'product.jpg',
+        'Native to Brazil, these snakes have a beautiful rainbow shein. Adult length is appx 6ft. Very easy to tame and always captive bred.',
+      image: 'rainbowboa.jpg',
       category: categories[0]._id,
-      price: 500,
+      price: 350,
       quantity: 10
     },
     {
-      name: 'Product 2',
+      name: 'Gold Dust Day Gecko (Phelsuma laticauda)',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      image: 'product2.jpg',
+        'Native to tropical islands, these diurnal geckos are fun to watch and make great display animals.',
+      image: 'gold-dust-gecko.jpg',
       category: categories[1]._id,
-      price: 100,
+      price: 80,
       quantity: 50
     },
     {
-      name: 'Product 3',
+      name: '"Southern" Dart Frog (Ranitomeya Variabilis)',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      image: 'product3.jpg',
+        'Native to South America, these stunning thumbnail dart frogs only reach about 1 inch in adulthood.',
+      image: 'variabilis.jpg',
       category: categories[1]._id,
-      price: 150,
+      price: 75,
       quantity: 7
     },
     {
-      name: 'Product 4',
+      name: 'Emerald Tree Skink (Lamprolepis smaragdina)',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      image: 'product4.jpg',
+        'Native to the Phillipines, these are the most friendly and playful lizards you will ever keep.',
+      image: 'tree-skink.jpg',
       category: categories[2]._id,
-      price: 500,
+      price: 80,
       quantity: 10
     },
     {
-      name: 'Product 5',
+      name: 'Pink Quill (Tillandsia cyanea)',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      image: 'product5.jpg',
+        'Beautiful species of bromeliad. Darts love to lay eggs and deposit tadpoles in their leaves',
+      image: 'pink-quill.jpg',
       category: categories[3]._id,
-      price: 500,
+      price: 22,
       quantity: 10
     },
     {
-      name: 'Product 6',
+      name: 'Fruit Fly Culture (Melanogaster)',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      image: 'product6.jpg',
+        'Starter culture for smaller, flightless fruit flies, great for feeding smaller herps.',
+      image: 'fruit-fly.jpg',
       category: categories[4]._id,
-      price: 500,
+      price: 15,
       quantity: 10
     },
   ]);
