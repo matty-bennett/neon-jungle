@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
 import { useQuery } from '@apollo/react-hooks';
+import Button from 'react-bootstrap/Button';
 
 import Product from '../Product';
-import { QUERY_PRODUCTS, QUERY_CATEGORIES } from '../../utils/queries';
+import { QUERY_PRODUCTS } from '../../utils/queries';
 import spinner from "../../assets/spinner.gif";
 import { useStoreContext } from '../../utils/GlobalState';
-import { UPDATE_CURRENT_CATEGORY, UPDATE_PRODUCTS } from '../../utils/actions';
+import { UPDATE_PRODUCTS } from '../../utils/actions';
 import { idbPromise } from '../../utils/helpers';
 
 function Category() {
@@ -48,8 +49,8 @@ function Category() {
         <div >
             <div className="d-flex flex-row justify-content-center">
                 <h2>Category Name</h2>
-                <div>Filter</div>
-                <div>Sort</div>
+                <Button className="button-primary">Filter</Button>
+                <Button className="button-primary">Sort</Button>
             </div>
             {state.products.length ? (
                 <div>

@@ -7,72 +7,91 @@ import Lizard from '../../assets/hero/bearded-dragon.jpg';
 import Snake from '../../assets/hero/rainbow-boa.jpg';
 import Frog from '../../assets/hero/terribilis.jpg';
 import Plant from '../../assets/hero/bromeliad.jpg';
+import { Link } from 'react-router-dom';
+// import { useStoreContext } from '../../utils/GlobalState';
+// import Category from '../Category';
 
-function Hero() {
-    return(
+function Hero(category) {
+    const { _id } = category;
+    // const [state, dispatch] = useStoreContext();
+    // const { categories } = state;
+
+    // const categoryId = categories.find((catId) => catId._id === _id);
+
+    return (
         <Carousel>
             <Carousel.Item>
                 <img
-                className="hero-img"
-                src={Gecko}
-                alt="Giant Day Gecko"
+                    className="hero-img"
+                    src={Gecko}
+                    alt="Giant Day Gecko"
                 />
                 <Carousel.Caption style={{
                     marginBottom: "2rem"
                 }}>
-                <Button className="button-primary" href="#" size="lg" block>View All Geckos</Button>
+                    <Button className="button-primary" href="#" size="lg" block>
+                        <Link to={`/category/${_id}`}>View All Geckos</Link>
+                    </Button>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
                 <img
-                className="hero-img"
-                src={Snake}
-                alt="Rainbow Boa"
+                    className="hero-img"
+                    src={Snake}
+                    alt="Rainbow Boa"
                 />
 
                 <Carousel.Caption style={{
                     marginBottom: "2rem"
                 }}>
-                <Button className="button-primary" href="#" size="lg" block>View All Snakes</Button>
+                    <Button className="button-primary" href="#" size="lg" block>
+                        <Link to={`/category/${_id}`}>View All Snakes</Link>
+                    </Button>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
                 <img
-                className="hero-img"
-                src={Frog}
-                alt="Orange Terribilis"
+                    className="hero-img"
+                    src={Frog}
+                    alt="Orange Terribilis"
                 />
 
                 <Carousel.Caption style={{
                     marginBottom: "2rem"
                 }}>
-                <Button className="button-primary" href="#" size="lg" block>View All Frogs</Button>
+                    <Button className="button-primary" href="#" size="lg" block>
+                        <Link to={`/category/${_id}`}>View All Frogs</Link>
+                    </Button>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
                 <img
-                className="hero-img"
-                src={Lizard}
-                alt="Bearded Dragon"
+                    className="hero-img"
+                    src={Lizard}
+                    alt="Bearded Dragon"
                 />
 
                 <Carousel.Caption style={{
                     marginBottom: "2rem"
                 }}>
-                <Button className="button-primary" href="#" size="lg" block>View All Lizards</Button>
+                    <Button className="button-primary" href="#" size="lg" block>
+                        <Link to={`/category/${_id}`}>View All Lizards</Link>
+                    </Button>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
                 <img
-                className="hero-img"
-                src={Plant}
-                alt="Bromeliad"
+                    className="hero-img"
+                    src={Plant}
+                    alt="Bromeliad"
                 />
 
                 <Carousel.Caption style={{
                     marginBottom: "2rem"
                 }}>
-                <Button className="button-primary" href="#" size="lg" block>View All Plants</Button>
+                    <Button className="button-primary" href="#" size="lg" block>
+                        <Link to={`/category/${_id}`}>View All Plants</Link>
+                    </Button>
                 </Carousel.Caption>
             </Carousel.Item>
         </Carousel>
