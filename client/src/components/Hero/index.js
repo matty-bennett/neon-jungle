@@ -9,7 +9,6 @@ import Frog from '../../assets/hero/terribilis.jpg';
 import Plant from '../../assets/hero/bromeliad.jpg';
 import ViewAll from '../../assets/hero/view-all.jpg';
 
-import { Link } from 'react-router-dom';
 // import { useStoreContext } from '../../utils/GlobalState';
 // import Category from '../Category';
 
@@ -31,9 +30,7 @@ function Hero(category) {
                 <Carousel.Caption style={{
                     marginBottom: "2rem"
                 }}>
-                    <Button className="button-primary" href="#" size="lg" block>
-                        <Link to={`/category/${_id}`}>View All Geckos</Link>
-                    </Button>
+                    <Button className="button-primary" href={`/category/${_id}`} size="lg" block>View All Geckos</Button>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -46,9 +43,7 @@ function Hero(category) {
                 <Carousel.Caption style={{
                     marginBottom: "2rem"
                 }}>
-                    <Button className="button-primary" href="#" size="lg" block>
-                        <Link to={`/category/${_id}`}>View All Snakes</Link>
-                    </Button>
+                    <Button className="button-primary" href={`/category/${_id}`} size="lg" block>View All Snakes</Button>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -61,9 +56,7 @@ function Hero(category) {
                 <Carousel.Caption style={{
                     marginBottom: "2rem"
                 }}>
-                    <Button className="button-primary" href="#" size="lg" block>
-                        <Link to={`/category/${_id}`}>View All Frogs</Link>
-                    </Button>
+                    <Button className="button-primary" href={`/category/${_id}`} size="lg" block>View All Frogs</Button>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -76,9 +69,7 @@ function Hero(category) {
                 <Carousel.Caption style={{
                     marginBottom: "2rem"
                 }}>
-                    <Button className="button-primary" href="#" size="lg" block>
-                        <Link to={`/category/${_id}`}>View All Lizards</Link>
-                    </Button>
+                    <Button className="button-primary" href={`/category/${_id}`} size="lg" block>View All Lizards</Button>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -91,22 +82,20 @@ function Hero(category) {
                 <Carousel.Caption style={{
                     marginBottom: "2rem"
                 }}>
-                    <Button className="button-primary" href="#" size="lg" block>
-                        <Link to={`/category/${_id}`}>View All Plants</Link>
-                    </Button>
+                    <Button className="button-primary" href={`/category/${_id}`} size="lg" block>View All Plants</Button>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
                 <img
-                className="hero-img"
-                src={ViewAll}
-                alt="jungle"
+                    className="hero-img"
+                    src={ViewAll}
+                    alt="jungle"
                 />
 
                 <Carousel.Caption style={{
                     marginBottom: "2rem"
                 }}>
-                <Button className="button-primary" href="#" size="lg" block>View All Categories</Button>
+                    <Button className="button-primary" href="/category" size="lg" block>View All Categories</Button>
                 </Carousel.Caption>
             </Carousel.Item>
         </Carousel>

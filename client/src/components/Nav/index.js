@@ -1,11 +1,10 @@
 import React from 'react';
-import '../../index.css'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { Link } from 'react-router-dom';
 
+import '../../index.css';
 import Auth from '../../utils/auth';
 
 
@@ -13,7 +12,7 @@ function Navi() {
     function checkLoggedIn() {
         if (Auth.loggedIn()) {
             return (
-                <Nav.Link><Link className="navlink" to="/orderHistory">Order History</Link></Nav.Link>
+                <Nav.Link className="navlink" href="/orderHistory">Order History</Nav.Link>
             );
         }
     }
@@ -23,13 +22,13 @@ function Navi() {
                 <Row className="d-flex justify-content-center">
                     <Navbar>
                         <Nav className="mr-auto">
-                            <Nav.Link><Link className="navlink" to='/'>Home</Link></Nav.Link>
-                            <Nav.Link><Link className="navlink" to='/categories'>Categories</ Link></Nav.Link>
-                            <Nav.Link><Link className="navlink" to="/supplies">Supplies</Link></Nav.Link>
-                            <Nav.Link><Link className="navlink" to="/feeders">Feeders</Link></Nav.Link>
-                            <Nav.Link><Link className="navlink" to="/community">Community</Link></Nav.Link>
+                            <Nav.Link className="navlink" href='/'>Home</Nav.Link>
+                            <Nav.Link className="navlink" href='/categories'>Categories</Nav.Link>
+                            <Nav.Link className="navlink" href="/supplies">Supplies</Nav.Link>
+                            <Nav.Link className="navlink" href="/feeders">Feeders</Nav.Link>
+                            <Nav.Link className="navlink" href="/community">Community</Nav.Link>
                             {checkLoggedIn()}
-                            <Nav.Link><Link className="navlink" to="/contact">Contact</Link></Nav.Link>
+                            <Nav.Link className="navlink" href="/contact">Contact</Nav.Link>
                         </Nav>
                     </Navbar>
                 </Row>

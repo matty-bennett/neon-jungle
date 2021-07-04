@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useMutation } from '@apollo/react-hooks';
 import { Link } from "react-router-dom";
-import { Container, Button } from "react-bootstrap";
 import { LOGIN } from "../utils/mutations"
 import Auth from "../utils/auth";
 
@@ -35,7 +34,7 @@ function Login(props) {
                 ← Go to Signup
             </Link>
 
-            <h2 className="d-flex justify-content-center" style={{color: "rgb(255, 136, 0)"}}>Login</h2>
+            <h2 className="d-flex justify-content-center" style={{ color: "rgb(255, 136, 0)" }}>Login</h2>
 
             <form onSubmit={handleFormSubmit}>
 
@@ -43,7 +42,7 @@ function Login(props) {
                     <label style={{
                         color: "rgb(255, 136, 0)",
                         marginRight: "1rem"
-                        }} htmlFor="email">Email address:</label>
+                    }} htmlFor="email">Email address:</label>
                     <input
                         placeholder="youremail@test.com"
                         name="email"
@@ -57,7 +56,7 @@ function Login(props) {
                     <label style={{
                         color: "rgb(255, 136, 0)",
                         marginRight: "1rem"
-                        }} htmlFor="pwd">Password:</label>
+                    }} htmlFor="pwd">Password:</label>
                     <input
                         placeholder="******"
                         name="password"
@@ -78,7 +77,7 @@ function Login(props) {
                         Submit
                     </button>
                 </div>
-                
+
             </form>
         </div>
     );

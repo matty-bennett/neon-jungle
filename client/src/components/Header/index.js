@@ -9,7 +9,6 @@ import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import { Form } from 'react-bootstrap';
 import { FormControl } from 'react-bootstrap';
-import { FaSearch } from 'react-icons/fa';
 
 import Auth from '../../utils/auth';
 
