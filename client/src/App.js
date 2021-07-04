@@ -12,6 +12,7 @@ import NoMatch from "./pages/NoMatch";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import categoryPage from './pages/categoryPage';
+import OrderHistory from './pages/OrderHistory';
 import { StoreProvider } from "./utils/GlobalState";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -42,6 +43,7 @@ function App() {
               <Route exact path="/signup" component={Signup} />
               <Route exact path="/products/:id" component={Detail} />
               <Route exact path="/category/:id" component={categoryPage} />
+              <Route exact path="/orderHistory" component={OrderHistory} />
               <Route component={NoMatch} />
             </Switch>
             <Footer />

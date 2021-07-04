@@ -6,10 +6,17 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
 
-import AvailabilityMenu from '../TestComponent';
+import Auth from '../../utils/auth';
 
 
 function Navi() {
+    function checkLoggedIn() {
+        if (Auth.loggedIn()) {
+            return (
+                <Nav.Link><Link className="navlink" to="/orderHistory">Order History</Link></Nav.Link>
+            );
+        }
+    }
     return (
         <div className="navi">
             <Container>
@@ -21,8 +28,8 @@ function Navi() {
                             <Nav.Link><Link className="navlink" to="/supplies">Supplies</Link></Nav.Link>
                             <Nav.Link><Link className="navlink" to="/feeders">Feeders</Link></Nav.Link>
                             <Nav.Link><Link className="navlink" to="/community">Community</Link></Nav.Link>
-                            <Nav.Link><Link className="navlink" to="/contact">Contact</Link></Nav.Link>                
-
+                            {checkLoggedIn()}
+                            <Nav.Link><Link className="navlink" to="/contact">Contact</Link></Nav.Link>
                         </Nav>
                     </Navbar>
                 </Row>

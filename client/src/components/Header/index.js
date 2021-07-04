@@ -11,14 +11,29 @@ import { Form } from 'react-bootstrap';
 import { FormControl } from 'react-bootstrap';
 import { FaSearch } from 'react-icons/fa';
 
+import Auth from '../../utils/auth';
+
 function Header() {
-     return (
-         <div className="header">
+    function checkLoggedIn() {
+        if (Auth.loggedIn()) {
+            return (
+                <Col className="d-flex flex-column align-items-center justify-content-center">
+                    <Button className="button-primary"><Link className="header-link" to='/' onClick={() => Auth.logout()}>Logout</Link></Button>
+                </Col>
+            );
+        } else {
+            return (
+                <Col className="d-flex flex-column align-items-center justify-content-center">
+                    <Button className="button-primary"><Link className="header-link" to='/login'>Login/Sign-up</Link></Button>
+                </Col>
+            )
+        }
+    }
+    return (
+        <div className="header">
             <Container>
                 <Row className="d-flex justify-content-between">
-                    <Col className="d-flex flex-column align-items-center justify-content-center">
-                        <Button className="button-primary"><Link className="header-link" to='/login'>Login/Sign-up</Link></Button>
-                    </Col>
+                    {checkLoggedIn()}
                     <Col xs={6} md={4} className="d-flex justify-content-center">
                         <Image className="logo-img" src={Logo} alt="logo" />
                     </Col>
@@ -30,8 +45,8 @@ function Header() {
                     </Col>
                 </Row>
             </Container>
-         </div>
-     )
- };
+        </div>
+    )
+};
 
- export default Header;
+export default Header;
