@@ -1,19 +1,17 @@
-
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-//import Hero from './components/Hero';
-import Header from './components/Header';
-import Navi from './components/Nav';
-import Footer from './components/Footer';
 import { ApolloProvider } from '@apollo/react-hooks';
 import ApolloClient from 'apollo-boost';
 
+import Header from './components/Header';
+import Navi from './components/Nav';
+import Footer from './components/Footer';
 import Home from './pages/Home';
 import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
-import Category from "./pages/categoryPage";
+import categoryPage from './pages/categoryPage';
 import { StoreProvider } from "./utils/GlobalState";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -42,7 +40,8 @@ function App() {
               <Route exact path="/" component={Home} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/signup" component={Signup} />
-              <Route exact path="/category" component={Category} />
+              <Route exact path="/products/:id" component={Detail} />
+              <Route exact path="/category/:id" component={categoryPage} />
               <Route component={NoMatch} />
             </Switch>
             <Footer />
