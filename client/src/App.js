@@ -11,7 +11,8 @@ import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
-import categoryPage from './pages/categoryPage';
+import CategoryList from './components/CategoryList';
+import SingleCategory from './pages/SingleCategory';
 import OrderHistory from './pages/OrderHistory';
 import { StoreProvider } from "./utils/GlobalState";
 
@@ -42,7 +43,8 @@ function App() {
               <Route exact path="/login" component={Login} />
               <Route exact path="/signup" component={Signup} />
               <Route exact path="/products/:id" component={Detail} />
-              <Route exact path="/category/:id" component={categoryPage} />
+              <Route exact path="/categories" component={CategoryList} />
+              <Route exact path="/categories/:id" component={SingleCategory} />
               <Route exact path="/orderHistory" component={OrderHistory} />
               <Route component={NoMatch} />
             </Switch>
