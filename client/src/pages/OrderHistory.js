@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
 import { useQuery } from '@apollo/react-hooks';
+
 import { QUERY_USER } from "../utils/queries";
+import Cart from "../components/Cart";
 
 function OrderHistory() {
     const { data } = useQuery(QUERY_USER);
@@ -47,7 +48,7 @@ function OrderHistory() {
                 ) : null}
 
             </div>
-
+            <Cart />
         </>)
 
 };
