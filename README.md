@@ -11,7 +11,7 @@
 [Contributions](https://github.com/matty-bennett/neon-jungle/tree/main#contributions)
 
 ### Installation
-To view the project's code on your machine, clone the code into your terminal, run "npm install" and "npm run seed". Then, in the root of the directory, run "npm start" to start the servers and it will automatically open up the server website! You can also view the deployed website [here](link).
+To view the project's code on your machine, clone the code into your terminal, run "npm install" and "npm run seed". Then, in the root of the directory, run "npm start" to start the servers and it will automatically open up the server website! You can also view the deployed website [here](https://lovely-carlsbad-caverns-60308.herokuapp.com/).
 
 ### Usage
 This website was created using React, MongoDB, Express.js, and Node.js. It is an e-commerce website for purchasing exotic animals and other related products that Matt wants to sell!
