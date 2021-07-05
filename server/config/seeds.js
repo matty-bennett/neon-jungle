@@ -42,7 +42,7 @@ db.once('open', async () => {
       description:
         'Native to South America, these stunning thumbnail dart frogs only reach about 1 inch in adulthood.',
       image: 'variabilis.jpg',
-      category: categories[1]._id,
+      category: categories[3]._id,
       price: 75,
       quantity: 7
     },
@@ -60,7 +60,7 @@ db.once('open', async () => {
       description:
         'Beautiful species of bromeliad. Darts love to lay eggs and deposit tadpoles in their leaves',
       image: 'pink-quill.jpg',
-      category: categories[3]._id,
+      category: categories[4]._id,
       price: 22,
       quantity: 10
     },

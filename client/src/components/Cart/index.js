@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { loadStripe } from '@stripe/stripe-js';
+// import { loadStripe } from '@stripe/stripe-js';
 // import { useLazyQuery } from '@apollo/client';
 
 import CartItem from '../CartItem';
@@ -11,7 +11,7 @@ import { idbPromise } from "../../utils/helpers";
 import { FaShoppingCart } from 'react-icons/fa';
 // import { QUERY_CHECKOUT } from '../../utils/queries';
 
-const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
+// const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 
 const Cart = () => {
     const [state, dispatch] = useStoreContext();

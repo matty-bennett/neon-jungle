@@ -7,7 +7,8 @@ import Cart from '../components/Cart';
 import { QUERY_CATEGORIES } from '../utils/queries';
 import { useStoreContext } from '../utils/GlobalState';
 import { idbPromise } from '../utils/helpers';
-import { UPDATE_CATEGORIES, UPDATE_CURRENT_CATEGORY } from '../utils/actions';
+import { UPDATE_CATEGORIES } from '../utils/actions';
+import ProductByCategory from '../components/ProductByCategory';
 
 function SingleCategory() {
     const [state, dispatch] = useStoreContext();
@@ -52,7 +53,7 @@ function SingleCategory() {
 
                     <h2>{currentCategory.name}</h2>
 
-                    {/* Here it needs to map over products and display the ones that have a matching category id */}
+                    <ProductByCategory />
                 </div>
             ) : null}
             {

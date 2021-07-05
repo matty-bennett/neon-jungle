@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useQuery } from '@apollo/react-hooks';
+import { Link } from 'react-router-dom';
 
-import Category from '../Category';
 import { QUERY_CATEGORIES } from '../../utils/queries';
 import spinner from "../../assets/spinner.gif";
 import { useStoreContext } from '../../utils/GlobalState';
@@ -10,7 +10,6 @@ import { idbPromise } from '../../utils/helpers';
 
 function CategoryList() {
     const [state, dispatch] = useStoreContext();
-    const { currentCategory } = state;
     const { loading, data } = useQuery(QUERY_CATEGORIES);
 
     useEffect(() => {
@@ -36,26 +35,21 @@ function CategoryList() {
         }
     }, [data, loading, dispatch]);
 
-    function filterCategories() {
-        if (!currentCategory) {
-            return state.categories;
-        }
-
-        return state.categories.filter(category => category._id === currentCategory);
-    }
-
     return (
         <div >
             <h2>Categories:</h2>
             {state.categories.length ? (
                 <div>
-                    {filterCategories().map(category => (
-                        <Category
+                    {state.categories.map(category => (
+                        <Link to={`/categories/${category._id}`}
                             key={category._id}
                             _id={category._id}
                             // image={product.image}
                             name={category.name}
-                        />
+                        >
+                            <h2>{category.name}</h2>
+                        </Link>
+
                     ))}
                 </div>
             ) : (
