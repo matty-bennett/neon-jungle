@@ -2,6 +2,11 @@
 
 ## Description
 
+Owning pets has been a part of our culture for as long as we can remember. It’s safe to say that dogs and cats are among the most popular choice but many people don’t know about the other stunning and exotic animals you can keep and care for. When paired with a custom, bioactive enclosure with live plants, it’s like taking a slice of the rainforest to keep right in your home. 
+With Neon Jungle, users have access to a simple web application with a variety of captive bred animals and plants for sale as well all of the supplies needed to care for and ensure that those animals get the best care possible and the most realistic environments to their native habitats. 
+
+There is a dedicated community section in our application (future development) that allows users to create a profile and make posts to discuss whatever they like, relating to the hobby, or if they have questions or concerns about certain products or animal care. Users can also comment on and upvote any posts they like and the most popular posts will  show up on the main community page.
+For those that love pets, but don’t have the time and space to take care of the larger and furrier friends, neon jungle is the perfect shop for you.
 
 ## Table of Contents
 [Installation](https://github.com/matty-bennett/neon-jungle/tree/main#installation)
