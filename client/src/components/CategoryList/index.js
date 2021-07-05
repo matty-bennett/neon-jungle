@@ -36,12 +36,12 @@ function CategoryList() {
     }, [data, loading, dispatch]);
 
     return (
-        <div >
-            <h2>Categories:</h2>
+        <div className="container">
+            <h2 className="product">Categories:</h2>
             {state.categories.length ? (
-                <div>
+                <div className="flex-row justify-content-around">
                     {state.categories.map(category => (
-                        <Link to={`/categories/${category._id}`}
+                        <Link className="category-btn" to={`/categories/${category._id}`}
                             key={category._id}
                             _id={category._id}
                             // image={product.image}

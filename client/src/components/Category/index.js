@@ -13,12 +13,12 @@ function Category(item) {
 
     return (
         <div >
-            <Link to={`/categories/${_id}`}>
+            <Link  to={`/categories/${_id}`}>
                 {/* <img
                     alt={name}
                     src={`/images/${image}`}
                 /> */}
-                <h2>{name}</h2>
+                <h2 >{name}</h2>
             </Link>
         </div>
     );
